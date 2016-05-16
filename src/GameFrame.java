@@ -5,6 +5,9 @@ import javax.swing.*;
  */
 public class GameFrame extends AbstractGameFrame {
 
+    private SceneManager sceneManager;
+    private FPSManager fpsManager;
+
     public GameFrame(){
 
         if(SwingUtilities.isEventDispatchThread()){

@@ -70,9 +70,9 @@ public class ScriptRunner implements  Runnable {
 
     /*
     delete() makes the thread cease execution completely. The thread cannot call any
-    other function after this call and hopefully the JFM will delete the thread object
+    other function after this call and hopefully the JVM will delete the thread object
     for purposes of efficiency.
-    DO NOT CALL THIS UNLESS YOU KNOW FOR A FACT YOU WILL NOT USE THIS FUNCTION AGAIN.
+    DO NOT CALL THIS UNLESS YOU KNOW FOR A FACT YOU WILL NOT USE THIS THREAD AGAIN.
      */
     public void delete(){
         isActive = false;

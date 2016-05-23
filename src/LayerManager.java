@@ -19,8 +19,6 @@ public class LayerManager {
 
     public void paint(Graphics g){
 
-        g.setColor(Color.blue);
-
         ListIterator listIterator = layerLinkedList.listIterator();
 
         while(listIterator.hasNext()){
@@ -30,6 +28,20 @@ public class LayerManager {
             layer.paint(g);
 
         }
+
+    }
+
+    public void update(int x, int y){
+
+        ListIterator listIterator = layerLinkedList.listIterator();
+
+        while(listIterator.hasNext()){
+
+            Layer layer = (Layer)listIterator.next();
+            layer.update(x,y);
+
+        }
+
 
     }
 

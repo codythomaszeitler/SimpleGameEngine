@@ -7,10 +7,12 @@ import java.util.*;
 public class Layer {
 
     private LinkedList<GameObject> gameObjectsToPaint;
+    private int degree;
 
     public Layer(){
 
         gameObjectsToPaint = new LinkedList<>();
+        degree = 1;
 
     }
 
@@ -34,10 +36,25 @@ public class Layer {
 
     }
 
-    public void paint(Graphics g){
+    public void update(int x, int y){
 
         ListIterator listIterator = gameObjectsToPaint.listIterator();
 
+        while(listIterator.hasNext()){
+
+            GameObject gameObject = (GameObject)listIterator.next();
+            gameObject.setXCoordinate( gameObject.getXCoordinate() + (degree * x) );
+            gameObject.setYCoordinate( gameObject.getYCoordinate() + (degree * y) );
+
+        }
+
+
+
+    }
+
+    public void paint(Graphics g){
+
+        ListIterator listIterator = gameObjectsToPaint.listIterator();
         while(listIterator.hasNext()){
 
             GameObject temp = (GameObject)listIterator.next();

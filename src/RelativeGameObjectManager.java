@@ -29,8 +29,8 @@ public class RelativeGameObjectManager {
         while(listIterator.hasNext()){
             RelativeGameObject temp = (RelativeGameObject)listIterator.next();
 
-            int xCoordinate = temp.getX() + gameObject.getxCoordinate();
-            int yCoordinate = temp.getY() + gameObject.getyCoordinate();
+            int xCoordinate = temp.getX() + gameObject.getXCoordinate();
+            int yCoordinate = temp.getY() + gameObject.getYCoordinate();
 
 
             g.fillRect(xCoordinate, yCoordinate,

@@ -1,3 +1,5 @@
+package SimpleGameEngine;
+
 /**
  * Created by Cody Thomas Zeitler on 5/19/2016.
  */

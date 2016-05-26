@@ -1,3 +1,5 @@
+package SimpleGameEngine;
+
 import java.awt.*;
 import java.awt.event.KeyListener;
 

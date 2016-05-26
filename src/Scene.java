@@ -1,3 +1,5 @@
+package SimpleGameEngine;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
@@ -11,11 +13,31 @@ public abstract class Scene implements Script{
     private EnvironmentManager environmentManager;
     private CameraController cameraController;
 
+    public Scene(){
+
+    }
+
+    public Scene(LayerManager layerManager){
+        this.layerManager = layerManager;
+    }
+
+    public Scene(EnvironmentManager environmentManager){
+        this.environmentManager = environmentManager;
+    }
+
     public Scene(LayerManager layerManager, EnvironmentManager environmentManager) {
 
         this.layerManager = layerManager;
         this.environmentManager = environmentManager;
 
+    }
+
+    public void setLayerManager(LayerManager layerManager){
+        this.layerManager = layerManager;
+    }
+
+    public void setEnvironmentManager(EnvironmentManager environmentManager){
+        this.environmentManager = environmentManager;
     }
 
     public void start(){
@@ -26,6 +48,10 @@ public abstract class Scene implements Script{
 
     public LayerManager getLayerManager(){
         return layerManager;
+    }
+
+    public EnvironmentManager getEnvironmentManager(){
+        return environmentManager;
     }
 
 

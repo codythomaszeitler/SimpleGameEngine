@@ -1,3 +1,5 @@
+package SimpleGameEngine;
+
 import javax.swing.*;
 import java.awt.event.KeyListener;
 
@@ -11,7 +13,11 @@ public class GameFrame extends AbstractGameFrame {
     private CameraController cameraController;
 
 
-    public GameFrame(){
+    public GameFrame(int width, int height){
+        super.setSize(width, height);
+        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super.setResizable(true);
+
         System.setProperty("sun.java2d.opengl", "True");
 
         fpsManager = new FPSManager(this, 1000/60);
@@ -20,6 +26,10 @@ public class GameFrame extends AbstractGameFrame {
 
     public void addRelativeGameObject(GameObject gameObject, Scene scene){
         cameraController = new CameraController(this, gameObject, scene);
+    }
+
+    public void start(){
+        super.setVisible(true);
     }
 
     public void addKeyboardInput(KeyListener keyListener){
